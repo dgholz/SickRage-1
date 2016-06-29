@@ -59,6 +59,7 @@ import sys
 import threading
 import time
 import traceback
+import uuid
 
 codecs.register(lambda name: codecs.lookup('utf-8') if name == 'cp65001' else None)
 sys.path.insert(1, os.path.abspath(os.path.join(os.path.dirname(__file__), 'lib')))
@@ -316,8 +317,8 @@ class SickRage(object):
         if self.run_as_daemon:
             self.daemonize()
 
-        # Get PID
-        sickbeard.INSTANCE_ID = os.getpid()
+        # Create unique instance ID which will change if we restart
+        sickbeard.INSTANCE_ID = uuid.uuid4().int
 
         # Build from the DB to start with
         self.load_shows_from_db()
