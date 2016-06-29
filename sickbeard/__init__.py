@@ -80,7 +80,7 @@ shutil.copyfile = shutil_custom.copyfile_custom
 requests.packages.urllib3.disable_warnings()
 indexerApi = indexer_api.indexerApi
 
-PID = None
+INSTANCE_ID = None
 
 CFG = None
 CONFIG_FILE = None
@@ -1640,7 +1640,7 @@ def sig_handler(signum=None, frame=None):
     frame_ = frame
     if not isinstance(signum, type(None)):
         logger.log(u"Signal {0:d} caught, saving and exiting...".format(int(signum)))
-        Shutdown.stop(PID)
+        Shutdown.stop(INSTANCE_ID)
 
 
 def saveAll():

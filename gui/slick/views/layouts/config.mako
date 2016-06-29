@@ -9,7 +9,7 @@
 %>
 
 <%block name="scripts">
-    <script type="text/javascript" src="${srRoot}/js/rootDirs.js?${sbPID}"></script>
+    <script type="text/javascript" src="${srRoot}/js/rootDirs.js?${sbINSTANCE_ID}"></script>
 </%block>
 <%block name="content">
     <div class="row">

@@ -13,12 +13,12 @@
 %>
 
 <%block name="scripts">
-    <script type="text/javascript" src="${srRoot}/js/lib/jquery.bookmarkscroll.js?${sbPID}"></script>
-    <script type="text/javascript" src="${srRoot}/js/plotTooltip.js?${sbPID}"></script>
-    <script type="text/javascript" src="${srRoot}/js/sceneExceptionsTooltip.js?${sbPID}"></script>
-    <script type="text/javascript" src="${srRoot}/js/ratingTooltip.js?${sbPID}"></script>
-    <script type="text/javascript" src="${srRoot}/js/ajaxEpSearch.js?${sbPID}"></script>
-    <script type="text/javascript" src="${srRoot}/js/ajaxEpSubtitles.js?${sbPID}"></script>
+    <script type="text/javascript" src="${srRoot}/js/lib/jquery.bookmarkscroll.js?${sbINSTANCE_ID}"></script>
+    <script type="text/javascript" src="${srRoot}/js/plotTooltip.js?${sbINSTANCE_ID}"></script>
+    <script type="text/javascript" src="${srRoot}/js/sceneExceptionsTooltip.js?${sbINSTANCE_ID}"></script>
+    <script type="text/javascript" src="${srRoot}/js/ratingTooltip.js?${sbINSTANCE_ID}"></script>
+    <script type="text/javascript" src="${srRoot}/js/ajaxEpSearch.js?${sbINSTANCE_ID}"></script>
+    <script type="text/javascript" src="${srRoot}/js/ajaxEpSubtitles.js?${sbINSTANCE_ID}"></script>
 </%block>
 
 <%block name="content">

@@ -65,15 +65,15 @@
         <link rel="apple-touch-icon" sizes="72x72" href="${srRoot}/images/ico/favicon-72.png">
         <link rel="apple-touch-icon" href="${srRoot}/images/ico/favicon-57.png">
 
-        <link rel="stylesheet" type="text/css" href="${srRoot}/css/vender.min.css?${sbPID}"/>
-        <link rel="stylesheet" type="text/css" href="${srRoot}/css/browser.css?${sbPID}" />
-        <link rel="stylesheet" type="text/css" href="${srRoot}/css/lib/jquery-ui-1.10.4.custom.min.css?${sbPID}" />
-        <link rel="stylesheet" type="text/css" href="${srRoot}/css/lib/jquery.qtip-2.2.1.min.css?${sbPID}"/>
-        <link rel="stylesheet" type="text/css" href="${srRoot}/css/style.css?${sbPID}"/>
-        <link rel="stylesheet" type="text/css" href="${srRoot}/css/print.css?${sbPID}" />
+        <link rel="stylesheet" type="text/css" href="${srRoot}/css/vender.min.css?${sbINSTANCE_ID}"/>
+        <link rel="stylesheet" type="text/css" href="${srRoot}/css/browser.css?${sbINSTANCE_ID}" />
+        <link rel="stylesheet" type="text/css" href="${srRoot}/css/lib/jquery-ui-1.10.4.custom.min.css?${sbINSTANCE_ID}" />
+        <link rel="stylesheet" type="text/css" href="${srRoot}/css/lib/jquery.qtip-2.2.1.min.css?${sbINSTANCE_ID}"/>
+        <link rel="stylesheet" type="text/css" href="${srRoot}/css/style.css?${sbINSTANCE_ID}"/>
+        <link rel="stylesheet" type="text/css" href="${srRoot}/css/print.css?${sbINSTANCE_ID}" />
 
         %if sickbeard.THEME_NAME != "light":
-            <link rel="stylesheet" type="text/css" href="${srRoot}/css/${sickbeard.THEME_NAME}.css?${sbPID}" />
+            <link rel="stylesheet" type="text/css" href="${srRoot}/css/${sickbeard.THEME_NAME}.css?${sbINSTANCE_ID}" />
         %endif
         <%block name="css" />
     </head>
@@ -221,9 +221,9 @@
             var commands = ${sorted(commands)};
             var episodes = ${episodes};
         </script>
-        <script type="text/javascript" src="${srRoot}/js/vender.min.js?${sbPID}"></script>
-        <script type="text/javascript" src="${srRoot}/js/core.min.js?${sbPID}"></script>
-        <script type="text/javascript" src="${srRoot}/js/apibuilder.js?${sbPID}"></script>
+        <script type="text/javascript" src="${srRoot}/js/vender.min.js?${sbINSTANCE_ID}"></script>
+        <script type="text/javascript" src="${srRoot}/js/core.min.js?${sbINSTANCE_ID}"></script>
+        <script type="text/javascript" src="${srRoot}/js/apibuilder.js?${sbINSTANCE_ID}"></script>
     </body>
 </html>
 

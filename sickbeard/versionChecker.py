@@ -341,7 +341,7 @@ class CheckVersion(object):
 class UpdateManager(object):  # pylint: disable=too-few-public-methods
     @staticmethod
     def get_update_url():
-        return sickbeard.WEB_ROOT + "/home/update/?pid=" + str(sickbeard.PID)
+        return sickbeard.WEB_ROOT + "/home/update/?instance_id=" + str(sickbeard.INSTANCE_ID)
 
 
 class GitUpdateManager(UpdateManager):

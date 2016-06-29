@@ -136,7 +136,7 @@ class PageTemplate(MakoTemplate):
 
         self.arguments['numErrors'] = len(classes.ErrorViewer.errors)
         self.arguments['numWarnings'] = len(classes.WarningViewer.errors)
-        self.arguments['sbPID'] = str(sickbeard.PID)
+        self.arguments['sbINSTANCE_ID'] = str(sickbeard.INSTANCE_ID)
 
         self.arguments['title'] = "FixME"
         self.arguments['header'] = "FixME"
@@ -746,7 +746,7 @@ class Home(WebRoot):
 
         if sickbeard.started:
             return callback + '(' + json.dumps(
-                {"msg": str(sickbeard.PID)}) + ');'
+                {"msg": str(sickbeard.INSTANCE_ID)}) + ');'
         else:
             return callback + '(' + json.dumps({"msg": "nope"}) + ');'
 
@@ -1149,8 +1149,8 @@ class Home(WebRoot):
                         tvdirFree=tvdirFree, rootDir=rootDir,
                         controller="home", action="status")
 
-    def shutdown(self, pid=None):
-        if not Shutdown.stop(pid):
+    def shutdown(self, instance_id=None):
+        if not Shutdown.stop(instance_id):
             return self.redirect('/' + sickbeard.DEFAULT_PAGE + '/')
 
         title = "Shutting down"
@@ -1158,8 +1158,8 @@ class Home(WebRoot):
 
         return self._genericMessage(title, message)
 
-    def restart(self, pid=None):
-        if not Restart.restart(pid):
+    def restart(self, instance_id=None):
+        if not Restart.restart(instance_id):
             return self.redirect('/' + sickbeard.DEFAULT_PAGE + '/')
 
         t = PageTemplate(rh=self, filename="restart.mako")
@@ -1167,8 +1167,8 @@ class Home(WebRoot):
         return t.render(title=_("Home"), header=_("Restarting SickRage"), topmenu="system",
                         controller="home", action="restart")
 
-    def updateCheck(self, pid=None):
-        if str(pid) != str(sickbeard.PID):
+    def updateCheck(self, instance_id=None):
+        if str(instance_id) != str(sickbeard.INSTANCE_ID):
             return self.redirect('/home/')
 
         sickbeard.versionCheckScheduler.action.check_for_new_version(force=True)
@@ -1176,9 +1176,9 @@ class Home(WebRoot):
 
         return self.redirect('/' + sickbeard.DEFAULT_PAGE + '/')
 
-    def update(self, pid=None, branch=None):
+    def update(self, instance_id=None, branch=None):
 
-        if str(pid) != str(sickbeard.PID):
+        if str(instance_id) != str(sickbeard.INSTANCE_ID):
             return self.redirect('/home/')
 
         checkversion = CheckVersion()
@@ -1205,7 +1205,7 @@ class Home(WebRoot):
         if sickbeard.BRANCH != branch:
             sickbeard.BRANCH = branch
             ui.notifications.message(_('Checking out branch') + ': ', branch)
-            return self.update(sickbeard.PID, branch)
+            return self.update(sickbeard.INSTANCE_ID, branch)
         else:
             ui.notifications.message(_('Already on branch') + ': ', branch)
             return self.redirect('/' + sickbeard.DEFAULT_PAGE + '/')

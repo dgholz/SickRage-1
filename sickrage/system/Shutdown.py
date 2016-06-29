@@ -27,8 +27,8 @@ class Shutdown(object):
         pass
 
     @staticmethod
-    def stop(pid):
-        if str(pid) != str(sickbeard.PID):
+    def stop(id):
+        if str(id) != str(sickbeard.INSTANCE_ID):
             return False
 
         sickbeard.events.put(Events.SystemEvent.SHUTDOWN)

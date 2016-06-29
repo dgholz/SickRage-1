@@ -43,7 +43,7 @@ class ShutdownTests(unittest.TestCase):
         """
         Test shutdown
         """
-        sickbeard.PID = 123456
+        sickbeard.INSTANCE_ID = 123456
         sickbeard.events = Events(None)
 
         test_cases = {
@@ -62,8 +62,8 @@ class ShutdownTests(unittest.TestCase):
         }
 
         for tests in test_cases, unicode_test_cases:
-            for (pid, result) in tests.iteritems():
-                self.assertEqual(Shutdown.stop(pid), result)
+            for (instance_id, result) in tests.iteritems():
+                self.assertEqual(Shutdown.stop(instance_id), result)
 
 
 if __name__ == '__main__':

@@ -3,8 +3,8 @@
     import sickbeard
 %>
 <%block name="scripts">
-    <script type="text/javascript" src="${srRoot}/js/rootDirs.js?${sbPID}"></script>
-    <script type="text/javascript" src="${srRoot}/js/plotTooltip.js?${sbPID}"></script>
+    <script type="text/javascript" src="${srRoot}/js/rootDirs.js?${sbINSTANCE_ID}"></script>
+    <script type="text/javascript" src="${srRoot}/js/plotTooltip.js?${sbINSTANCE_ID}"></script>
 </%block>
 <%block name="content">
     <div id="tabs">

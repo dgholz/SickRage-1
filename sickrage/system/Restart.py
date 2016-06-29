@@ -27,8 +27,8 @@ class Restart(object):
         pass
 
     @staticmethod
-    def restart(pid):
-        if str(pid) != str(sickbeard.PID):
+    def restart(id):
+        if str(id) != str(sickbeard.INSTANCE_ID):
             return False
 
         sickbeard.events.put(Events.SystemEvent.RESTART)

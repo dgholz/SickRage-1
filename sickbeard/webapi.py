@@ -1589,7 +1589,7 @@ class CMD_SickBeardPing(ApiCall):
     def run(self):
         """ Ping SickRage to check if it is running """
         if sickbeard.started:
-            return _responds(RESULT_SUCCESS, {"pid": sickbeard.PID}, "Pong")
+            return _responds(RESULT_SUCCESS, {"instance_id": sickbeard.INSTANCE_ID}, "Pong")
         else:
             return _responds(RESULT_SUCCESS, msg="Pong")
 
@@ -1605,7 +1605,7 @@ class CMD_SickBeardRestart(ApiCall):
 
     def run(self):
         """ Restart SickRage """
-        if not Restart.restart(sickbeard.PID):
+        if not Restart.restart(sickbeard.INSTANCE_ID):
             return _responds(RESULT_FAILURE, msg='SickRage can not be restarted')
 
         return _responds(RESULT_SUCCESS, msg="SickRage is restarting...")
@@ -1827,7 +1827,7 @@ class CMD_SickBeardShutdown(ApiCall):
 
     def run(self):
         """ Shutdown SickRage """
-        if not Shutdown.stop(sickbeard.PID):
+        if not Shutdown.stop(sickbeard.INSTANCE_ID):
             return _responds(RESULT_FAILURE, msg='SickRage can not be shut down')
 
         return _responds(RESULT_SUCCESS, msg="SickRage is shutting down...")

@@ -11,10 +11,10 @@
 </%block>
 
 <%block name="scripts">
-    <script type="text/javascript" src="${srRoot}/js/qualityChooser.js?${sbPID}"></script>
+    <script type="text/javascript" src="${srRoot}/js/qualityChooser.js?${sbINSTANCE_ID}"></script>
     <script type="text/javascript" src="${srRoot}/js/editShow.js"></script>
     % if show.is_anime:
-        <script type="text/javascript" src="${srRoot}/js/blackwhite.js?${sbPID}"></script>
+        <script type="text/javascript" src="${srRoot}/js/blackwhite.js?${sbINSTANCE_ID}"></script>
     % endif
 </%block>
 

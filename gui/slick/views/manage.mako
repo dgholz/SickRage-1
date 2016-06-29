@@ -4,7 +4,7 @@
     from sickbeard.common import statusStrings
 %>
 <%block name="scripts">
-    <script type="text/javascript" src="${srRoot}/js/massUpdate.js?${sbPID}"></script>
+    <script type="text/javascript" src="${srRoot}/js/massUpdate.js?${sbINSTANCE_ID}"></script>
 </%block>
 
 <%block name="content">

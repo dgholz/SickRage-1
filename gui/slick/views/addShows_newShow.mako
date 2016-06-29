@@ -4,10 +4,10 @@
     from sickbeard.helpers import anon_url
 %>
 <%block name="scripts">
-    <script type="text/javascript" src="${srRoot}/js/qualityChooser.js?${sbPID}"></script>
-    <script type="text/javascript" src="${srRoot}/js/addShowOptions.js?${sbPID}"></script>
-    <script type="text/javascript" src="${srRoot}/js/rootDirs.js?${sbPID}"></script>
-    <script type="text/javascript" src="${srRoot}/js/blackwhite.js?${sbPID}"></script>
+    <script type="text/javascript" src="${srRoot}/js/qualityChooser.js?${sbINSTANCE_ID}"></script>
+    <script type="text/javascript" src="${srRoot}/js/addShowOptions.js?${sbINSTANCE_ID}"></script>
+    <script type="text/javascript" src="${srRoot}/js/rootDirs.js?${sbINSTANCE_ID}"></script>
+    <script type="text/javascript" src="${srRoot}/js/blackwhite.js?${sbINSTANCE_ID}"></script>
 </%block>
 
 <%block name="tabs">

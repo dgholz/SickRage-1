@@ -317,7 +317,7 @@ class SickRage(object):
             self.daemonize()
 
         # Get PID
-        sickbeard.PID = os.getpid()
+        sickbeard.INSTANCE_ID = os.getpid()
 
         # Build from the DB to start with
         self.load_shows_from_db()
