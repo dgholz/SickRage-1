@@ -554,7 +554,7 @@ class SickRage(object):
                     logger.log('Restarting SickRage with {options}'.format(options=popen_list))
                     # shutdown the logger to make sure it's released the logfile BEFORE it restarts SR.
                     logger.shutdown()
-                    subprocess.Popen(popen_list, cwd=os.getcwd())
+                    os.execv(popen_list[0], popen_list)
 
         # Make sure the logger has stopped, just in case
         logger.shutdown()
